@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
-        //
+        $clientes = Clientes::get();
+
+        return view('cliantesLista', compact('clientes'));
     }
 
 

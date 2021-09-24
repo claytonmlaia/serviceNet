@@ -1,7 +1,7 @@
 
 ## Para utilização, siga as instruções abaixo:
 
-- Baixe todo o conteúdo, incluído a pasta BD.
+- Baixe todo o conteúdo.
 - Configure o arquivo .env com os dados de acesso ao seu banco de dados.
 - certifique-se de ter pelo menos versão 7.4 do PHP instalado juntamente com banco de dados MySQL.
 - Utilize alguma ferramenta como Laragon, Xampp, AppServer, ou outro de sua preferência, desde que atenda aos requisitos acima, ou execute o comando (php artisan serve) via terminal dentro do diretorio raíz.
