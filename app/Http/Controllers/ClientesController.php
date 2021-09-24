@@ -14,7 +14,6 @@ class ClientesController extends Controller
 
     public function index()
     {
-        flash(__('msgUsuarios.usuario.cadastro.sucesso'))->success();
         return view('clientesForm');
     }
 
@@ -52,7 +51,6 @@ class ClientesController extends Controller
 
     public function edit(Clientes $clientes)
     {
-        //dd($clientes);
         return view('clientesEditForm', compact('clientes'));
     }
 
@@ -78,7 +76,6 @@ class ClientesController extends Controller
 
     public function destroy(Clientes $clientes)
     {
-        //dd($clientes->id);
         $cliente = Clientes::find($clientes->id);
         $cliente->delete();
 

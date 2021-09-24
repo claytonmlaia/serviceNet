@@ -109,6 +109,13 @@
             $(".alert").fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
         });
     </script>
+    <script>
+        //MASCARAS
+        $(document).ready(function(){
+            $('#cep').mask('99.999-999');
+            $('#telefone').mask('(99)99999-9999');
+        });
+    </script>
     @yield('endPageScript')
 </body>
 </html>

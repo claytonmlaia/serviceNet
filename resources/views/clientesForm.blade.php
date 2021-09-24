@@ -73,13 +73,4 @@
         </div>
     </div><br>
 @endsection
-
-@section('endPageScript')
-    <script>
-        //MASCARAS
-        $(document).ready(function(){
-            $('#cep').mask('99.999-999');
-            $('#telefone').mask('(99)99999-9999');
-        });
-    </script>
-@endsection
+    
