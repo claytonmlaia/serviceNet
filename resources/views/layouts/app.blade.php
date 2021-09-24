@@ -9,7 +9,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
+    <script src="{{ asset('js/startPageScript.js') }}"></script>
+
+    @yield('startPageScript')
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('jquery/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('jquery-easing/jquery.easing.min.js') }}"></script>
@@ -19,6 +21,18 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+
+    <style>
+        .alert{
+            display: inline;
+            float: right;
+        }
+        .baseFloatRight{
+            display: inline;
+            float: right;
+            margin-right: 10px;
+        }
+    </style>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -83,5 +97,18 @@
             @yield('content')
         </main>
     </div>
+    @yield('control')
+    @yield('endPageScript')
+    <br>
+    <br>
+    <div class="alert">
+        @include('flash::message')
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(".alert").fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
+        });
+    </script>
+    @yield('endPageScript')
 </body>
 </html>
