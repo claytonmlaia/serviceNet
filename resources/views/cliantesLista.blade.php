@@ -41,7 +41,7 @@
                                         CEP: {{ $cliente->cep }}
                                     </td>
                                     <td>
-                                        <a class="btn btn-success" href="{{ url('/') }}" role="button" title="Detalhes do cadastro"><i class="fas fa-eye"></i></a>
+                                        <a class="btn btn-success" href="" role="button" title="Detalhes do cadastro"><i class="fas fa-eye"></i></a>
                                         <a class="btn btn-primary" href="{{ url('/CET/EDT') }}/{{ $cliente->id }}" role="button" title="Editar cadastro"><i class="fas fa-edit"></i></a>
                                         <a class="btn btn-danger" href="" onclick="aoClicarExcluir({{ $cliente->id }})" role="button" title="Excluír cadastro"><i class="fas fa-trash-alt"></i></a>
                                     </td>

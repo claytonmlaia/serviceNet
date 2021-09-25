@@ -23,11 +23,11 @@
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="inputPassword4">Telefone</label>
-                                        <input type="text" class="form-control" id="telefone" name="telefone" value="{{ $clientes->telefone }}" required>
+                                        <input type="text" class="form-control telefone" id="telefone" name="telefone" value="{{ $clientes->telefone }}" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="inputEmail4">CEP</label>
-                                        <input type="text" class="form-control" id="cep" name="cep" value="{{ $clientes->cep }}" required>
+                                        <input type="text" class="form-control cep" id="cep" name="cep" value="{{ $clientes->cep }}" required>
                                     </div>
 
                                 </div>
@@ -64,22 +64,18 @@
         </div>
     </div>
 @endsection
-<
+
 @section('control')
     <div class="container col-md-11"><br>
         <div id="list" class="row baseFloatRight">
             <a class="btn btn-primary" href="{{ url('/') }}" role="button"><i class="fas fa-home"></i> Início</a>&nbsp;&nbsp;
-            <a class="btn btn-primary" href="{{ url('/') }}" role="button"><i class="fas fa-arrow-left"></i> Voltar</a>
+            <a class="btn btn-primary" href="{{ url('/CET') }}" role="button"><i class="fas fa-arrow-left"></i> Voltar</a>
         </div>
     </div><br>
 @endsection
 
 @section('endPageScript')
     <script>
-        //MASCARAS
-        $(document).ready(function(){
-            $('#cep').mask('99.999-999');
-            $('#telefone').mask('(99)99999-9999');
-        });
+
     </script>
 @endsection

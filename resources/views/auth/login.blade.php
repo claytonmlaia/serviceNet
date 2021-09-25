@@ -53,9 +53,13 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     {{ __('Entrar') }}
                                 </button>
+
+                                <a class="btn btn-primary" href="{{ route('social.login') }}">
+                                    {{ __('Entrar com facebook') }}
+                                </a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-danger" href="{{ route('password.request') }}">
