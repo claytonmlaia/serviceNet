@@ -105,16 +105,54 @@
         @include('flash::message')
     </div>
     <script>
+        // DELAY DAS MENSAGENS DA APLICAÇÃO
         $(document).ready(function(){
             $(".alert").fadeIn( 300 ).delay( 3000 ).fadeOut( 400 );
         });
+
+
+        // API VIACEP PARA PREENCHIMENTO DE ENDEREÇO
+        $("#cep").blur(function () {
+            var cep = this.value.replace("-", "").replace(".", "");
+            if (cep.length != 8) {
+                return false;
+            }
+            var url = "https://viacep.com.br/ws/" + cep + "/json/";
+            $.getJSON(url, function (dadosRetorno) {
+                try {
+                    $("#endereco").val(dadosRetorno.logradouro +' - '+ dadosRetorno.bairro);
+                    $("#cidade").val(dadosRetorno.localidade);
+                    $("#estado").val(dadosRetorno.uf);
+                } catch (ex) {
+                }
+            });
+        });
     </script>
     <script>
-        //MASCARAS
-        $(document).ready(function(){
-            $('#cep').mask('99.999-999');
-            $('#telefone').mask('(99)99999-9999');
-        });
+        // MASCARAS
+        jQuery("input.telefone")
+            .mask("(99) 9999-9999?9")
+            .focusout(function (event) {
+                var target, phone, element;
+                target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+                phone = target.value.replace(/\D/g, '');
+                element = $(target);
+                element.unmask();
+                if(phone.length > 10) {
+                    element.mask("(99) 99999-999?9");
+                } else {
+                    element.mask("(99) 9999-9999?9");
+                }
+            });
+        jQuery("input.cep")
+            .mask("99.999-999")
+            .focusout(function (event) {
+                var target, phone, element;
+                target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+                element = $(target);
+                element.unmask();
+                element.mask("99.999-999");
+            });
     </script>
     @yield('endPageScript')
 </body>
