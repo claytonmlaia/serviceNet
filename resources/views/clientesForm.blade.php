@@ -17,7 +17,7 @@
                         <form name="frmClientes" id="frmClientes" action="#" method="post">
                             @csrf
                             <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-3">
                                     <label for="inputEmail4">Nome completo</label>
                                     <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome completo" required>
                                 </div>
@@ -29,14 +29,13 @@
                                     <label for="inputEmail4">CEP</label>
                                     <input type="text" class="form-control cep" id="cep" name="cep" required>
                                 </div>
-
-                            </div>
-
-                            <div class="form-row">
                                 <div class="form-group col-md-3">
                                     <label for="inputPassword4">Endereço</label>
                                     <input type="text" class="form-control" id="endereco" name="endereco" required>
                                 </div>
+                            </div>
+
+                            <div class="form-row">
                                 <div class="form-group col-md-3">
                                     <label for="inputEmail4">Número</label>
                                     <input type="text" class="form-control" id="numero" name="numero" required>
